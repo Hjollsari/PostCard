@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;  /* Adjust button width */
+    width: 220px; 
     height: 80px;  /* Adjust button height */
     font-size: 22px;  /* Make text bigger */
     padding: 15px 20px; /* Add space inside */
