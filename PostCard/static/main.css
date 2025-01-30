@@ -1,0 +1,13 @@
+.top-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.btn1{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  text-align: center;
+}
