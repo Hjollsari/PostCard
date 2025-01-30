@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{url_for('static', filename='text.css')}}">
+<script src="{{ url_for('static', filename='workPhoto.js') }}" defer></script>
+<body>
+    <div class="text-boxes">
+        <label for="to-name">Til</Label>
+        <input type="text" id="to-name" placeholder="Nafn meðtakanda:"/>
+        <label for="from-name">Frá</label>
+        <input type="text" id="from-name" placeholder="Nafn sendanda:">
+        <label for="message">Skilaboð</label>
+        <textarea type="text" id="message" c placeholder="Skilaboð: "></textarea>
+    </div>
+    <div class="generate-div">
+        <button class="generate-btn" onclick="generatePostcard()">Búa til</button>
+    </div>
+
+    <div id="postcard" class="postcardDIV" style="display: none;">
+        <div id="postcardText" class="postcardText">
+            <p id="toText"></p>
+            <p id="fromText"></p>
+            <p id="messageText"></p>
+            <button class="donwload-btn" onclick="downloadPostCard()">Sækja</button>
+        </div>
+        
+    </div>
+</body>

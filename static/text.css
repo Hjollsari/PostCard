@@ -1,0 +1,56 @@
+.text-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.text-boxes label {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.text-boxes input,
+.text-boxes textarea {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+.generate-btn {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff2d55, #ff8c00);
+}
+.generate-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.postcardDIV{
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    position: relative;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}

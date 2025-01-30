@@ -1,0 +1,125 @@
+.top-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+body{
+    background-color: #A8E1F6;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 80vh;
+    color: #FEC377;
+    margin-top: -50px;
+}
+.btn2 {
+    width: 220px;  /* Adjust button width */
+    height: 80px;  /* Adjust button height */
+    font-size: 22px;  /* Make text bigger */
+    padding: 15px 20px; /* Add space inside */
+    border-radius: 25px; /* Round the corners */
+    border: 3px solid white; /* Add a white border */
+    text-align: center;
+    font-weight: bold; /* Make text bold */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add spacing between letters */
+
+    /* Change background and text color */
+    background: linear-gradient(45deg, #ff8c00, #ff2d55); 
+    color: white; 
+    
+    /* Add shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+
+    /* Smooth transition effect */
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn1{
+    width: 220px;  /* Adjust button width */
+    height: 80px;  /* Adjust button height */
+    font-size: 22px;  /* Make text bigger */
+    padding: 15px 20px; /* Add space inside */
+    border-radius: 25px; /* Round the corners */
+    border: 3px solid white; /* Add a white border */
+    text-align: center;
+    font-weight: bold; /* Make text bold */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add spacing between letters */
+
+    /* Change background and text color */
+    background: linear-gradient(45deg, #ff2d55,#ff8c00); 
+    color: white; 
+    
+    /* Add shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+
+    /* Smooth transition effect */
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn1:hover {
+    background: linear-gradient(45deg,#ff8c00, #ff2d55); 
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
+/* Hover effect */
+.btn2:hover {
+    background: linear-gradient(45deg, #ff2d55, #ff8c00); 
+    transform: scale(1.1); /* Slightly enlarge */
+}
+
+/* Optional: Click effect */
+.btn1:active, .btn2:active {
+    transform: scale(0.95); /* Slightly shrink */
+}
+#upload{
+    display: none;
+}
+
+.postcardDEMO {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10; /* Ensure the text is visible above the background image */
+}
+.postcardDEMO-D{
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    position: relative;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: -200px;
+}
+
+a.continue-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid white;
+    text-align: center;
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff2d55,#ff8c00); 
+}
+a.continue-btn:hover{
+    background: linear-gradient(45deg,#ff8c00,#ff2d55); 
+    transform: scale(1.1)
+}
