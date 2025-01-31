@@ -23,6 +23,11 @@ function setAutoBackground() {
   const imageList = [
     "static/recources/images/pexels-christian-heitz-285904-842711.jpg",
     "static/recources/images/pexels-francesco-ungaro-1525041.jpg",
+    "static/recources/images/pexels-daejeung-2734421.jpg",
+    "static/recources/images/pexels-eberhardgross-1367192.jpg",
+    "static/recources/images/pexels-felixmittermeier-1146134.jpg",
+    "static/recources/images/pexels-iriser-1707213.jpg",
+    "static/recources/images/pexels-quang-nguyen-vinh-222549-2171277.jpg"
   ];
   const randomIndex = Math.floor(Math.random() * imageList.length);
   const randomPhoto = imageList[randomIndex];

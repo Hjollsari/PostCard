@@ -44,11 +44,14 @@
   justify-content: center;
 }
 .postcardDIV {
-  width: 500px;
-  height: 300px;
+  width: 1000px;
+  height: 600px;
   border: 1px solid #ccc;
   margin: 20px auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-color: lightgray;
   text-align: center;
   padding: 20px;
@@ -75,33 +78,29 @@
   text-decoration: none;
   background: linear-gradient(45deg, #ff2d55, #ff8c00);
 }
-.toText{
-  color: antiquewhite;
-  font-family: 'Impact', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: left;
-  margin-left: 10px;
-  
-}
-.fromText{
 
-  color: antiquewhite;
-  font-family: 'Impact', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: left;
-  margin-left: 10px;
-  
-}
-
-.messageText{
+.postcardText {
   color: antiquewhite;
   font-family: 'Impact', sans-serif;
   font-weight: bold;
   font-size: 18px;
   text-align: left;
   margin-left: 10px;
+  max-width: 40%;
+  position: relative; /* Text inside container */
+}
 
+.toText {
+  font-size: 24px; /* Adjust font size for the "To" text */
+  margin-bottom: 5px; /* Keep a small gap between "To" and the next text */
+}
 
+.fromText {
+  font-size: 24px; /* Adjust font size for the "From" text */
+  margin-bottom: 5px; /* Keep a small gap between "From" and the next text */
+}
+
+.messageText {
+  font-size: 18px; /* Adjust font size for the "Message" text */
+  word-wrap: break-word; /* Make sure long messages wrap */
 }
