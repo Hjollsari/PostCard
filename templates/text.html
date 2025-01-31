@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="{{url_for('static', filename='text.css')}}">
 <script src="{{ url_for('static', filename='workPhoto.js') }}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <body>
     <div class="text-boxes">
         <label for="to-name">Til</Label>
@@ -19,8 +20,10 @@
             <p id="toText"></p>
             <p id="fromText"></p>
             <p id="messageText"></p>
-            <button class="donwload-btn" onclick="downloadPostCard()">Sækja</button>
         </div>
         
+    </div>
+    <div id="donwload-btn-id" class="download-btndiv" style="display: none">
+        <button class="download-btn" onclick="downloadPostCard()">Sækja</button>
     </div>
 </body>

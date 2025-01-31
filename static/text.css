@@ -43,14 +43,65 @@
   align-items: center;
   justify-content: center;
 }
-.postcardDIV{
-    width: 500px;
-    height: 300px;
-    border: 1px solid #ccc;
-    margin: 20px auto;
-    position: relative;
-    background-color: lightgray;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+.postcardDIV {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  position: relative;
+  background-color: lightgray;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.download-btndiv {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
+.download-btn {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff2d55, #ff8c00);
+}
+.toText{
+  color: antiquewhite;
+  font-family: 'Impact', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 10px;
+  
+}
+.fromText{
+
+  color: antiquewhite;
+  font-family: 'Impact', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 10px;
+  
+}
+
+.messageText{
+  color: antiquewhite;
+  font-family: 'Impact', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  margin-left: 10px;
+
+
 }
