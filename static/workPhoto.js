@@ -27,17 +27,27 @@ function setAutoBackground() {
     "static/recources/images/pexels-eberhardgross-1367192.jpg",
     "static/recources/images/pexels-felixmittermeier-1146134.jpg",
     "static/recources/images/pexels-iriser-1707213.jpg",
-    "static/recources/images/pexels-quang-nguyen-vinh-222549-2171277.jpg"
+    "static/recources/images/pexels-quang-nguyen-vinh-222549-2171277.jpg",
+    "static/recources/images/pexels-gochrisgoxyz-1643403.jpg",
+    "static/recources/images/pexels-hakantahmaz-2536643.jpg",
+    "static/recources/images/pexels-jplenio-1690355.jpg",
+    "static/recources/images/pexels-maoriginalphotography-1485894.jpg",
+    "static/recources/images/pexels-rpnickson-2647990.jpg"
   ];
   const randomIndex = Math.floor(Math.random() * imageList.length);
   const randomPhoto = imageList[randomIndex];
   const postcard = document.getElementById("postcardDEMO");
   localStorage.setItem("imgURL", randomPhoto);
 
+  const img = new Image();
+  img.src = randomPhoto;
+
+  img.onload = function(){
   postcard.style.backgroundImage = `url(${randomPhoto})`;
   postcard.style.backgroundSize = "cover";
   postcard.style.display = "block";
   document.getElementById("continue-btn").style.display = "block";
+  }
 }
 
 function generatePostcard() {
@@ -53,7 +63,6 @@ function generatePostcard() {
   document.getElementById("fromText").innerText = `From: ${from}`;
   document.getElementById("messageText").innerText = message;
 
-  // Change the entire style with setAttribute
   document.getElementById("toText").classList.add("toText");
   document.getElementById("fromText").classList.add("fromText");
   document.getElementById("messageText").classList.add("messageText");
@@ -71,21 +80,19 @@ function downloadPostCard() {
     useCORS: true,
   })
     .then((canvas) => {
-      // Set the desired resolution by scaling the canvas size
-      const scaleFactor = 2; // Adjust the scaling factor
+
+      const scaleFactor = 2; 
       const canvasWidth = canvas.width * scaleFactor;
       const canvasHeight = canvas.height * scaleFactor;
 
-      // Create a new canvas with increased resolution
+
       const highResCanvas = document.createElement("canvas");
       const highResCtx = highResCanvas.getContext("2d");
       highResCanvas.width = canvasWidth;
       highResCanvas.height = canvasHeight;
 
-      // Draw the original canvas on the high-res canvas
       highResCtx.drawImage(canvas, 0, 0, canvasWidth, canvasHeight);
 
-      // Generate the high-res image
       const imgURL = highResCanvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = imgURL;

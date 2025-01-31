@@ -2,13 +2,12 @@
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 <script src="{{ url_for('static', filename='workPhoto.js') }}" defer></script>
 <head>
-    <h1 align ="center">IMAGES</h1>
 </head>
 <body>
     <div class="buttons">
         <input type="file" id="upload" accept="image/png" onchange="setBackground(event)">
-        <button class="btn1" onclick="document.getElementById('upload').click(); return false;">manual</button>
-        <button class= "btn2" onclick="setAutoBackground()">auto</button>
+        <button class="btn1" onclick="document.getElementById('upload').click(); return false;">Eigin mynd</button>
+        <button class= "btn2" onclick="setAutoBackground()">Sjálfkrafa mynd</button>
     </div>
     <div class="postcardDEMO-D" id="postcardDEMO" style="display: none;">
         <p class="postcardDEMO" style="display: none;"></p>
