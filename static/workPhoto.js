@@ -19,6 +19,8 @@ function setBackground(event) {
   }
 }
 
+let index = 0;
+
 function setAutoBackground() {
   const imageList = [
     "static/recources/images/pexels-christian-heitz-285904-842711.jpg",
@@ -32,22 +34,27 @@ function setAutoBackground() {
     "static/recources/images/pexels-hakantahmaz-2536643.jpg",
     "static/recources/images/pexels-jplenio-1690355.jpg",
     "static/recources/images/pexels-maoriginalphotography-1485894.jpg",
-    "static/recources/images/pexels-rpnickson-2647990.jpg"
+    "static/recources/images/pexels-rpnickson-2647990.jpg",
   ];
-  const randomIndex = Math.floor(Math.random() * imageList.length);
-  const randomPhoto = imageList[randomIndex];
+
+  //random mynd - taka ut
+  //const randomIndex = Math.floor(Math.random() * imageList.length);
+
+  index = (index + 1) % imageList.length;
+  const randomPhoto = imageList[index];
+
   const postcard = document.getElementById("postcardDEMO");
   localStorage.setItem("imgURL", randomPhoto);
 
   const img = new Image();
   img.src = randomPhoto;
 
-  img.onload = function(){
-  postcard.style.backgroundImage = `url(${randomPhoto})`;
-  postcard.style.backgroundSize = "cover";
-  postcard.style.display = "block";
-  document.getElementById("continue-btn").style.display = "block";
-  }
+  img.onload = function () {
+    postcard.style.backgroundImage = `url(${randomPhoto})`;
+    postcard.style.backgroundSize = "cover";
+    postcard.style.display = "block";
+    document.getElementById("continue-btn").style.display = "block";
+  };
 }
 
 function generatePostcard() {
@@ -57,6 +64,7 @@ function generatePostcard() {
 
   const postcard = document.getElementById("postcard");
   const button = document.getElementById("donwload-btn-id");
+  const colorP = document.getElementById('color-div')
   const imgURL = localStorage.getItem("imgURL");
 
   document.getElementById("toText").innerText = `To: ${to}`;
@@ -72,19 +80,32 @@ function generatePostcard() {
     postcard.style.backgroundSize = "cover";
     postcard.style.display = "block";
     button.style.display = "block";
+    colorP.style.display = "block"
   }
+
+
 }
+
+const colorPicker = document.getElementById("colorPicker");
+const toText = document.getElementById("toText");
+const fromText = document.getElementById("fromText");
+const messageText = document.getElementById("messageText");
+
+colorPicker.addEventListener('input', function() {
+  toText.style.color = colorPicker.value;
+  fromText.style.color = colorPicker.value;
+  messageText.style.color = colorPicker.value;
+});
+
 function downloadPostCard() {
   const postcard = document.getElementById("postcard");
   html2canvas(postcard, {
     useCORS: true,
   })
     .then((canvas) => {
-
-      const scaleFactor = 2; 
+      const scaleFactor = 2;
       const canvasWidth = canvas.width * scaleFactor;
       const canvasHeight = canvas.height * scaleFactor;
-
 
       const highResCanvas = document.createElement("canvas");
       const highResCtx = highResCanvas.getContext("2d");

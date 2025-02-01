@@ -4,7 +4,7 @@
   justify-content: center;
 }
 body {
-  background-color: #2b75d4;
+  background-color: #a2c5f2;
 }
 .buttons {
   display: flex;
@@ -13,7 +13,6 @@ body {
   gap: 20px;
   height: 80vh;
   color: #fec377;
-  margin-top: -50px;
 }
 
 .btn1 {
@@ -22,14 +21,15 @@ body {
   font-size: 22px;
   padding: 15px 20px;
   border-radius: 25px;
-  border: 3px solid white;
+  border: 2px solid rgb(0, 0, 0);
   text-align: center;
+  font-family: 'Impact', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  background: linear-gradient(45deg, #1368c3, #1c9ade);
-  color: white;
+  background: linear-gradient(45deg, #a6cbf3, #87c5e6);
+  color: rgb(0, 0, 0);
 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
@@ -42,14 +42,15 @@ body {
   font-size: 22px;
   padding: 15px 20px;
   border-radius: 25px;
-  border: 3px solid white;
+  border: 2px solid rgb(0, 0, 0);
   text-align: center;
+  font-family: 'Impact', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  background: linear-gradient(45deg, #1c9ade, #1368c3);
-  color: white;
+  background: linear-gradient(45deg, #87c5e6, #a6cbf3);
+  color: rgb(0, 0, 0);
 
   /* Skuggi */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -58,18 +59,19 @@ body {
   cursor: pointer;
 }
 .btn1:hover {
-  background: linear-gradient(45deg, #1c9ade, #1368c3);
+  background: linear-gradient(45deg, #87c5e6, #a6cbf3);
   transform: scale(1.1);
 }
 .btn2:hover {
-  background: linear-gradient(45deg, #1368c3, #1c9ade);
+  background: linear-gradient(45deg, #a6cbf3, #87c5e6);
   transform: scale(1.1);
 }
 
-/* Optional: Click effect */
+
 .btn1:active,
 .btn2:active {
-  transform: scale(0.95); /* Slightly shrink */
+  transform: scale(0.95);
+
 }
 #upload {
   display: none;
@@ -79,12 +81,12 @@ body {
   color: white;
   font-size: 20px;
   font-weight: bold;
-  z-index: 10; /* Ensure the text is visible above the background image */
+  z-index: 10; 
 }
 .postcardDEMO-D {
   width: 500px;
   height: 300px;
-  border: 1px solid #ccc;
+  border: 2px solid #000000;
   margin: 20px auto;
   position: relative;
   background-color: lightgray;
@@ -101,20 +103,21 @@ a.continue-btn {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  font-family: 'Impact', sans-serif;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 10px;
-  border: 3px solid white;
+  border: 2px solid rgb(0, 0, 0);
   text-align: center;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
-  background: linear-gradient(45deg, #1368c3, #1c9ade);
+  background: linear-gradient(45deg, #87c5e6, #a6cbf3);
 }
 a.continue-btn:hover {
-  background: linear-gradient(45deg, #1c9ade, #1368c3);
+  background: linear-gradient(45deg, #a6cbf3, #87c5e6);
   transform: scale(1.1);
 }
