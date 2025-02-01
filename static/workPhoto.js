@@ -63,12 +63,12 @@ function generatePostcard() {
   const message = document.getElementById("message").value;
 
   const postcard = document.getElementById("postcard");
-  const button = document.getElementById("donwload-btn-id");
+  const button = document.getElementById("download-btn");
   const colorP = document.getElementById('color-div')
   const imgURL = localStorage.getItem("imgURL");
 
-  document.getElementById("toText").innerText = `To: ${to}`;
-  document.getElementById("fromText").innerText = `From: ${from}`;
+  document.getElementById("toText").innerText = `Til: ${to}`;
+  document.getElementById("fromText").innerText = `Frá: ${from}`;
   document.getElementById("messageText").innerText = message;
 
   document.getElementById("toText").classList.add("toText");
@@ -80,7 +80,7 @@ function generatePostcard() {
     postcard.style.backgroundSize = "cover";
     postcard.style.display = "block";
     button.style.display = "block";
-    colorP.style.display = "block"
+    colorP.style.display = "block";
   }
 
 

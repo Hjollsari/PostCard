@@ -42,6 +42,7 @@ body{
   letter-spacing: 2px;
   text-decoration: none;
   background: linear-gradient(45deg, #95e387, #9feaa4);
+  margin: 8px;
 }
 .generate-btn:hover {
   background: linear-gradient(45deg,#9feaa4, #95e387); 
@@ -68,9 +69,9 @@ body{
 }
 .download-btndiv {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: baseline;
-
+  position:relative;
 }
 .download-btn {
   display: flex;
@@ -87,6 +88,7 @@ body{
   letter-spacing: 2px;
   text-decoration: none;
   background: linear-gradient(45deg, #95e387, #9feaa4);
+  margin: 8px;
 }
 .download-btn:hover {
   background: linear-gradient(45deg,#9feaa4, #95e387); 
@@ -105,19 +107,19 @@ body{
 .toText {
   font-size: 24px; 
   margin-bottom: 5px; 
-  color: #000000;
+  color: #ffffff;
 }
 
 .fromText {
   font-size: 24px; 
   margin-bottom: 5px; 
-  color: #000000;
+  color: #ffffff;
 }
 
 .messageText {
   font-size: 18px; 
   word-wrap: break-word; 
-  color: #000000;
+  color: #ffffff;
 }
 .color-div{
   display: flex;

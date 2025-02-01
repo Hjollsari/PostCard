@@ -13,11 +13,12 @@
     </div>
     <div class="generate-div">
         <button class="generate-btn" onclick="generatePostcard()">Búa til</button>
+        <button id="download-btn" class="download-btn" onclick="downloadPostCard()" style="display: none;">Sækja</button>
     </div>
     <div class="color-div" id="color-div" style="display: none;">
         <div class="colorText">
         <label for="colorPicker" >Veldu lit á texta:</label>
-        <input type="color" id="colorPicker" name="color" value="#000000">
+        <input type="color" id="colorPicker" name="color" value="#FFFFFF">
         </div>
     </div>
 
@@ -30,7 +31,5 @@
         </div>
         
     </div>
-    <div id="donwload-btn-id" class="download-btndiv" style="display: none">
-        <button class="download-btn" onclick="downloadPostCard()">Sækja</button>
-    </div>
+
 </body>
