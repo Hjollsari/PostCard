@@ -55,7 +55,7 @@ body{
 }
 .postcardDIV {
   width: 50vw;
-  height: calc(40vw * 2 / 3);
+  height: calc(50vw * 2 / 3);
   border: 2px solid #000000;
   margin: 20px auto;
   position: relative;
