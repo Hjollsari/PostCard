@@ -54,10 +54,8 @@ body{
   justify-content: center;
 }
 .postcardDIV {
-  width: 60vw;
-  height: 60vh;
-  /* width: 1000px;
-  height: 600px; */
+  width: 50vw;
+  height: 50vh;
   border: 2px solid #000000;
   margin: 20px auto;
   position: relative;

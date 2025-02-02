@@ -132,7 +132,7 @@ function downloadPostCard() {
     const maxWidth = canvas.width / 2.5;
     const lineSpacingMsg = LINE_SPACING * 0.9;
     const fontSizeMsg = fontSize * 0.75;
-    ctx.font = `bold ${fontSizeMsg}px Impact, sans-serif`;
+    ctx.font = `bold ${fontSizeMsg} Impact, sans-serif`;
 
     lines.forEach((line) => {
       let words = line.split(" ");

@@ -23,7 +23,7 @@ body {
   border-radius: 25px;
   border: 2px solid rgb(0, 0, 0);
   text-align: center;
-  font-family: 'Impact', sans-serif;
+  font-family: "Impact", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -44,7 +44,7 @@ body {
   border-radius: 25px;
   border: 2px solid rgb(0, 0, 0);
   text-align: center;
-  font-family: 'Impact', sans-serif;
+  font-family: "Impact", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -67,11 +67,9 @@ body {
   transform: scale(1.1);
 }
 
-
 .btn1:active,
 .btn2:active {
   transform: scale(0.95);
-
 }
 #upload {
   display: none;
@@ -84,8 +82,8 @@ body {
   z-index: 10; 
 }
 .postcardDEMO-D {
-  width: 50vw;
-  height: 50vh;
+  width: 40vw;
+  height: 40vh;
   border: 2px solid #000000;
   margin: 20px auto;
   position: relative;
@@ -95,15 +93,14 @@ body {
   box-sizing: border-box;
   margin-top: -200px;
 }
-
 a.continue-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
-  font-family: 'Impact', sans-serif;
+  font-family: "Impact", sans-serif;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
