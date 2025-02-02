@@ -112,46 +112,50 @@ function downloadPostCard() {
     canvas.height = bgImg.height;
 
     ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-    ctx.font = "bold 130px Impact, sans-serif";
+    fontSize = canvas.width * 0.025;
+    ctx.font = `bold ${fontSize}px Impact, sans-serif`;
     ctx.fillStyle = textColor;
 
-    const MARGAIN = 140;
-    const LINE_SPACING = 200;
-    const TOP_MARGAIN = 280;
+    const MARGAIN = canvas.width * 0.05;
+    const LINE_SPACING = fontSize * 1.5;
+    const TOP_MARGAIN = canvas.width * 0.07;
+    // const MARGAIN = 140;
+    // const LINE_SPACING = 200;
+    // const TOP_MARGAIN = 280;
 
     ctx.fillText(`Til: ${toText}`, MARGAIN, TOP_MARGAIN);
     ctx.fillText(`Frá: ${fromText}`, MARGAIN, TOP_MARGAIN + LINE_SPACING);
 
     const lines = messageText.split("\n");
-    let y = 680;
-    const x = 140; 
-    const maxWidth = canvas.width / 2.5; 
-    const lineSpacing = 140; 
-    ctx.font = "bold 100px Impact, sans-serif";
+    let y = TOP_MARGAIN + LINE_SPACING * 2;
+    const x = MARGAIN;
+    const maxWidth = canvas.width / 2.5;
+    const lineSpacingMsg = LINE_SPACING * 0.9;
+    const fontSizeMsg = fontSize * 0.75;
+    ctx.font = `bold ${fontSizeMsg}px Impact, sans-serif`;
 
     lines.forEach((line) => {
-      let words = line.split(" "); 
-      let currentLine = ""; 
-      let lineWidth = 0; 
+      let words = line.split(" ");
+      let currentLine = "";
+      let lineWidth = 0;
 
       words.forEach((word, index) => {
         const wordWidth = ctx.measureText(word).width;
 
         if (lineWidth + wordWidth > maxWidth) {
-          ctx.fillText(currentLine, x, y); 
-          y += lineSpacing; 
-          currentLine = word + " "; 
-          lineWidth = wordWidth; 
+          ctx.fillText(currentLine, x, y);
+          y += lineSpacingMsg;
+          currentLine = word + " ";
+          lineWidth = wordWidth;
         } else {
-          currentLine += word + " "; 
-          lineWidth += wordWidth + ctx.measureText(" ").width; 
+          currentLine += word + " ";
+          lineWidth += wordWidth + ctx.measureText(" ").width;
         }
       });
 
-    
       if (currentLine) {
         ctx.fillText(currentLine, x, y);
-        y += lineSpacing;
+        y += lineSpacingMsg;
       }
     });
     canvas.toBlob((blob) => {
