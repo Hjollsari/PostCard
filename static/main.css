@@ -93,6 +93,12 @@ body {
   box-sizing: border-box;
   margin-top: -200px;
 }
+@media (max-width: 768px) {
+  .postcardDIV {
+    width: 90vw; /* Increase width on smaller screens */
+    height: auto; /* Let height adjust based on content */
+  }
+}
 a.continue-btn {
   display: flex;
   align-items: center;

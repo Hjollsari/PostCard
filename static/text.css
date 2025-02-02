@@ -67,6 +67,13 @@ body{
   padding: 20px;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  .postcardDIV {
+    width: 90vw; /* Adjust width to 90% of the viewport */
+    height: auto; /* Allow the height to adjust automatically based on content */
+    padding: 15px; /* Reduce padding to make more room */
+  }
+}
 .download-btndiv {
   display: flex;
   justify-content: flex-end;
