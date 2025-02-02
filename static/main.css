@@ -96,7 +96,7 @@ body {
 @media (max-width: 768px) {
   .postcardDIV {
     width: 90vw; /* Increase width on smaller screens */
-    height: auto; /* Let height adjust based on content */
+    height: 20vh; /* Let height adjust based on content */
   }
 }
 a.continue-btn {
