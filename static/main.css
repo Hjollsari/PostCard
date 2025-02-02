@@ -94,7 +94,7 @@ body {
   margin-top: -200px;
 }
 @media (max-width: 768px) {
-  .postcardDIV {
+  .postcardDEMO-D {
     width: 90vw; /* Increase width on smaller screens */
     height: 20vh; /* Let height adjust based on content */
   }
