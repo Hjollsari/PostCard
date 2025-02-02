@@ -64,7 +64,7 @@ function generatePostcard() {
 
   const postcard = document.getElementById("postcard");
   const button = document.getElementById("download-btn");
-  const colorP = document.getElementById('color-div')
+  const colorP = document.getElementById("color-div");
   const imgURL = localStorage.getItem("imgURL");
 
   document.getElementById("toText").innerText = `Til: ${to}`;
@@ -82,8 +82,6 @@ function generatePostcard() {
     button.style.display = "block";
     colorP.style.display = "block";
   }
-
-
 }
 
 const colorPicker = document.getElementById("colorPicker");
@@ -91,37 +89,108 @@ const toText = document.getElementById("toText");
 const fromText = document.getElementById("fromText");
 const messageText = document.getElementById("messageText");
 
-colorPicker.addEventListener('input', function() {
+colorPicker.addEventListener("input", function () {
   toText.style.color = colorPicker.value;
   fromText.style.color = colorPicker.value;
   messageText.style.color = colorPicker.value;
 });
 
 function downloadPostCard() {
-  const postcard = document.getElementById("postcard");
-  html2canvas(postcard, {
-    useCORS: true,
-  })
-    .then((canvas) => {
-      const scaleFactor = 2;
-      const canvasWidth = canvas.width * scaleFactor;
-      const canvasHeight = canvas.height * scaleFactor;
+  const toText = document.getElementById("to-name").value;
+  const fromText = document.getElementById("from-name").value;
+  const messageText = document.getElementById("message").value;
+  const bgImg = new Image();
+  bgImg.src = localStorage.getItem("imgURL");
 
-      const highResCanvas = document.createElement("canvas");
-      const highResCtx = highResCanvas.getContext("2d");
-      highResCanvas.width = canvasWidth;
-      highResCanvas.height = canvasHeight;
+  const textColor = document.getElementById("colorPicker").value;
 
-      highResCtx.drawImage(canvas, 0, 0, canvasWidth, canvasHeight);
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
 
-      const imgURL = highResCanvas.toDataURL("image/png");
+  bgImg.onload = function () {
+    canvas.width = bgImg.width;
+    canvas.height = bgImg.height;
+
+    ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+    ctx.font = "bold 130px Impact, sans-serif";
+    ctx.fillStyle = textColor;
+
+    const MARGAIN = 140;
+    const LINE_SPACING = 200;
+    const TOP_MARGAIN = 280;
+
+    ctx.fillText(`Til: ${toText}`, MARGAIN, TOP_MARGAIN);
+    ctx.fillText(`Frá: ${fromText}`, MARGAIN, TOP_MARGAIN + LINE_SPACING);
+
+    const lines = messageText.split("\n");
+    let y = 680;
+    const x = 140; 
+    const maxWidth = canvas.width / 2.5; 
+    const lineSpacing = 140; 
+    ctx.font = "bold 100px Impact, sans-serif";
+
+    lines.forEach((line) => {
+      let words = line.split(" "); 
+      let currentLine = ""; 
+      let lineWidth = 0; 
+
+      words.forEach((word, index) => {
+        const wordWidth = ctx.measureText(word).width;
+
+        if (lineWidth + wordWidth > maxWidth) {
+          ctx.fillText(currentLine, x, y); 
+          y += lineSpacing; 
+          currentLine = word + " "; 
+          lineWidth = wordWidth; 
+        } else {
+          currentLine += word + " "; 
+          lineWidth += wordWidth + ctx.measureText(" ").width; 
+        }
+      });
+
+    
+      if (currentLine) {
+        ctx.fillText(currentLine, x, y);
+        y += lineSpacing;
+      }
+    });
+    canvas.toBlob((blob) => {
       const link = document.createElement("a");
-      link.href = imgURL;
+      link.href = URL.createObjectURL(blob);
       link.download = "postcard.png";
-
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    })
-    .catch((error) => console.error("Error capturing postcard", error));
+    }, "image/png");
+  };
 }
+//Backup tekur screenshot í stað að nota canvas (html2canvas)
+
+// function downloadPostCard() {
+//   const postcard = document.getElementById("postcard");
+//   html2canvas(postcard, {
+//     useCORS: true,
+//   })
+//     .then((canvas) => {
+//       const scaleFactor = 2;
+//       const canvasWidth = canvas.width * scaleFactor;
+//       const canvasHeight = canvas.height * scaleFactor;
+
+//       const highResCanvas = document.createElement("canvas");
+//       const highResCtx = highResCanvas.getContext("2d");
+//       highResCanvas.width = canvasWidth;
+//       highResCanvas.height = canvasHeight;
+
+//       highResCtx.drawImage(canvas, 0, 0, canvasWidth, canvasHeight);
+
+//       const imgURL = highResCanvas.toDataURL("image/png");
+//       const link = document.createElement("a");
+//       link.href = imgURL;
+//       link.download = "postcard.png";
+
+//       document.body.appendChild(link);
+//       link.click();
+//       document.body.removeChild(link);
+//     })
+//     .catch((error) => console.error("Error capturing postcard", error));
+// }
