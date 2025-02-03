@@ -117,11 +117,8 @@ function downloadPostCard() {
     ctx.fillStyle = textColor;
 
     const MARGAIN = canvas.width * 0.05;
-    const LINE_SPACING = fontSize * 1.5;
-    const TOP_MARGAIN = canvas.width * 0.07;
-    // const MARGAIN = 140;
-    // const LINE_SPACING = 200;
-    // const TOP_MARGAIN = 280;
+    const LINE_SPACING = fontSize * 1.6;
+    const TOP_MARGAIN = canvas.width * 0.08;
 
     ctx.fillText(`Til: ${toText}`, MARGAIN, TOP_MARGAIN);
     ctx.fillText(`Frá: ${fromText}`, MARGAIN, TOP_MARGAIN + LINE_SPACING);

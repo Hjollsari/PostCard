@@ -76,14 +76,17 @@ body {
 }
 
 .postcardDEMO {
+  object-fit: contain;
   color: white;
   font-size: 20px;
   font-weight: bold;
-  z-index: 10; 
+  z-index: 10;
 }
+
 .postcardDEMO-D {
+  display: flex;
   width: 40vw;
-  height: calc(40vw * 2 / 3);
+  min-height: calc(40vw * 2 / 3);
   border: 2px solid #000000;
   margin: 20px auto;
   position: relative;

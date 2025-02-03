@@ -106,14 +106,14 @@ body{
 
 .toText {
   font-size: 24px; 
-  margin-bottom: 5px; 
   color: #ffffff;
+  margin-bottom: -10px;
 }
 
 .fromText {
   font-size: 24px; 
-  margin-bottom: 5px; 
   color: #ffffff;
+  margin-bottom: -10px;
 }
 
 .messageText {
